@@ -3,7 +3,7 @@
 }
 
 .map-wrap {
-  position: relative;
-  width: 100%;
+  position: absolute;
+  width: 95%;
   height: calc(100vh - 77px);
 }
