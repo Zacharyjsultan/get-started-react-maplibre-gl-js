@@ -1,24 +1,26 @@
-import * as React from 'react';
-import Map, {NavigationControl} from 'react-map-gl';
-import Navbar from './components/navbar.js';
-import maplibregl from 'maplibre-gl';
-import 'maplibre-gl/dist/maplibre-gl.css';
-import './App.css';
+import * as React from "react";
+import Map, { NavigationControl, Marker } from "react-map-gl";
+import Navbar from "./components/navbar.js";
+import maplibregl from "maplibre-gl";
+import "maplibre-gl/dist/maplibre-gl.css";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <Navbar/>
-      <Map mapLib={maplibregl} 
+      <Navbar />
+      <Map
+        mapLib={maplibregl}
         initialViewState={{
-          longitude: 16.62662018,
-          latitude: 49.2125578,
-          zoom: 14
+          longitude: -90,
+          latitude: 45,
+          zoom: 2,
         }}
-        style={{width: "100%", height: " calc(100vh - 77px)"}}
-        mapStyle="https://api.maptiler.com/maps/streets/style.json?key=YOUR_MAPTILER_API_KEY_HERE"
+        style={{ display: "flex", width: "60%", height: " calc(80vh - 77px)" }}
+        mapStyle="https://api.maptiler.com/maps/e60f573a-7a27-4da5-92cb-5d1fa8fada53/style.json?key=NT85MaDvNjhEnEvcJV87"
       >
         <NavigationControl position="top-left" />
+        <Marker longitude={-122.67} latitude={45.5152} />
       </Map>
     </div>
   );
